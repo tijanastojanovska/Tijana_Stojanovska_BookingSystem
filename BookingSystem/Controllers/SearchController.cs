@@ -1,5 +1,6 @@
 ﻿using BookingSystem.Business.Interfaces;
 using BookingSystem.DTOs.Search;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingSystem.Controllers
@@ -15,7 +16,8 @@ namespace BookingSystem.Controllers
 			_searchService = searchService;
 		}
 
-		[HttpPost("search")]
+		[Authorize]
+		[HttpPost]
 		public async Task<ActionResult<SearchResponse>> Search([FromBody] SearchRequest request)
 		{
 			SearchResponse response = await _searchService.SearchAsync(request);

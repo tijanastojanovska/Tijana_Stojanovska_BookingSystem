@@ -14,6 +14,7 @@ namespace BookingSystem.Business
 		{
 			services.AddScoped<ISearchService, SearchService>();
 			services.AddScoped<IBookingService, BookingService>();
+			services.AddScoped<IAuthService, AuthService>();
 			services.AddScoped<ISearchStrategy, HotelOnlySearchStrategy>();
 			services.AddScoped<ISearchStrategy, HotelAndFlightSearchStrategy>();
 			services.AddScoped<ISearchStrategy, LastMinuteHotelsSearchStrategy>();

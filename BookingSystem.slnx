@@ -3,6 +3,5 @@
   <Project Path="BookingSystem.DataAccess/BookingSystem.DataAccess.csproj" Id="9b0537e9-228a-4494-8c36-1809c4455f57" />
   <Project Path="BookingSystem.Domain/BookingSystem.Domain.csproj" />
   <Project Path="BookingSystem.DTOs/BookingSystem.DTOs.csproj" />
-  <Project Path="BookingSystem.Helpers/BookingSystem.Helpers.csproj" />
   <Project Path="BookingSystem/BookingSystem.csproj" />
 </Solution>

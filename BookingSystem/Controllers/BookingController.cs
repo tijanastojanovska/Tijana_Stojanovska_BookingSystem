@@ -1,5 +1,6 @@
 ﻿using BookingSystem.Business.Interfaces;
 using BookingSystem.DTOs.Booking;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingSystem.Controllers
@@ -15,12 +16,14 @@ namespace BookingSystem.Controllers
 			_bookingService = bookingService;
 		}
 
+		[Authorize]
 		[HttpPost("book")]
 		public ActionResult<BookResponse> Book([FromBody] BookRequest request)
 		{
 			return Ok(_bookingService.Book(request));
 		}
 
+		[Authorize]
 		[HttpGet("status/{bookingCode}")]
 		public ActionResult<BookingStatusResponse> CheckStatus([FromRoute] string bookingCode)
 		{
