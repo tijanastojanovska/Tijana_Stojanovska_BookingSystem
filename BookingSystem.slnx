@@ -4,4 +4,5 @@
   <Project Path="BookingSystem.Domain/BookingSystem.Domain.csproj" />
   <Project Path="BookingSystem.DTOs/BookingSystem.DTOs.csproj" />
   <Project Path="BookingSystem/BookingSystem.csproj" />
+  <Project Path="BookSystem.Test/BookSystem.Test.csproj" Id="5e4a3a31-068f-4f0f-a1d2-89ee6ad9f9a8" />
 </Solution>
