@@ -26,13 +26,13 @@ namespace BookingSystem.Business.Implementation
 			Option? option = _searchRepository.GetOption(request.OptionCode);
 			if (option == null)
 			{
-				throw new ArgumentException("Option not found. Please search again");
+				throw new KeyNotFoundException("Option not found. Please search again");
 			}
 
 			SearchTypeEnum? searchType = _searchRepository.GetSearchType(request.OptionCode);
 			if (searchType == null)
 			{
-				throw new ArgumentException("Search type not found for this option");
+				throw new KeyNotFoundException("Search type not found for this option");
 			}
 
 			Booking booking = new Booking();
@@ -57,7 +57,7 @@ namespace BookingSystem.Business.Implementation
 			Booking? booking = _bookingRepository.Get(bookingCode);
 			if (booking == null)
 			{
-				throw new ArgumentException("Booking not found");
+				throw new KeyNotFoundException("Booking not found");
 			}
 
 			DateTime readyAt = booking.BookingTime.AddSeconds(booking.SleepTime);
