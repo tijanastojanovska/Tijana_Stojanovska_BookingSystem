@@ -15,7 +15,7 @@ namespace BookingSystem.DataAccess.Implementation.Repositories
 			_storage = new ConcurrentDictionary<string, StoredSearchOption>();
 		}
 
-		public void Save(SearchTypeEnum searchType, List<Option> options)
+		public void SaveInMemory(SearchTypeEnum searchType, List<Option> options)
 		{
 			foreach (Option option in options)
 			{
@@ -25,6 +25,30 @@ namespace BookingSystem.DataAccess.Implementation.Repositories
 
 				_storage[option.OptionCode] = stored;
 			}
+		}
+
+		public Option? GetOption(string optionCode)
+		{
+			StoredSearchOption? stored;
+
+			if (_storage.TryGetValue(optionCode, out stored))
+			{
+				return stored.Option;
+			}
+
+			return null;
+		}
+
+		public SearchTypeEnum? GetSearchType(string optionCode)
+		{
+			StoredSearchOption? stored;
+
+			if (_storage.TryGetValue(optionCode, out stored))
+			{
+				return stored.SearchType;
+			}
+
+			return null;
 		}
 	}
 }

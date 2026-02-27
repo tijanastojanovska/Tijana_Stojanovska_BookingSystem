@@ -15,7 +15,7 @@ namespace BookingSystem.Controllers
 			_searchService = searchService;
 		}
 
-		[HttpPost]
+		[HttpPost("search")]
 		public async Task<ActionResult<SearchResponse>> Search([FromBody] SearchRequest request)
 		{
 			SearchResponse response = await _searchService.SearchAsync(request);

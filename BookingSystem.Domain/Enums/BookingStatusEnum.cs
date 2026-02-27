@@ -1,6 +1,6 @@
 ﻿namespace BookingSystem.Domain.Enums
 {
-	internal enum BookingStatusEnum
+	public enum BookingStatusEnum
 	{
 		Pending,
 		Success,

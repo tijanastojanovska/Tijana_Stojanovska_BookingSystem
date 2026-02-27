@@ -21,7 +21,7 @@ namespace BookingSystem.Business.Implementation.Strategies
 		{
 			get { return SearchTypeEnum.HotelAndFlight; }
 		}
-		public async Task<List<Option>> ExecuteAsync(SearchCriteria criteria)
+		public async Task<List<Option>> SearchAsync(SearchCriteria criteria)
 		{
 			List<HotelApiResponse> hotels = await _hotelClient.SearchHotelsAsync(criteria.Destination);
 			List<FlightApiResponse> flights = await _flightClient.SearchFlightsAsync(criteria.DepartureAirport!, criteria.Destination);

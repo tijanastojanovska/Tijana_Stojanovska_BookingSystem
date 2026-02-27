@@ -33,13 +33,9 @@ namespace BookingSystem.Business.Implementation
 
 			var strategy = _searchFactory.GetStrategy(criteria);
 
-			var options = await strategy.ExecuteAsync(criteria);
+			var options = await strategy.SearchAsync(criteria);
 
-			_searchRepository
-				
-				
-				
-				.Save(strategy.Type, options);
+			_searchRepository.SaveInMemory(strategy.Type, options);
 
 
 			SearchResponse response = options.ToResponse();
@@ -51,17 +47,17 @@ namespace BookingSystem.Business.Implementation
 		{
 			if (request == null)
 			{
-				throw new ArgumentException("Request is required.");
+				throw new ArgumentException("Request is required");
 			}
 
 			if (string.IsNullOrWhiteSpace(request.Destination))
 			{
-				throw new ArgumentException("Destination is required.");
+				throw new ArgumentException("Destination is required");
 			}
 
 			if (request.FromDate >= request.ToDate)
 			{
-				throw new ArgumentException("FromDate must be before ToDate.");
+				throw new ArgumentException("FromDate must be before ToDate");
 			}
 		}
 	}

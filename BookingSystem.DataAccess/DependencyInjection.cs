@@ -11,6 +11,7 @@ namespace BookingSystem.DataAccess
 		public static IServiceCollection AddDataAccess (this IServiceCollection services)
 		{
 			services.AddSingleton<ISearchRepository, SearchRepository>();
+			services.AddSingleton<IBookingRepository, BookingRepository>();
 			services.AddHttpClient<IHotelClient, HotelClient>(c =>
 			c.BaseAddress = new Uri("https://tripx-test-functions.azurewebsites.net/"));
 

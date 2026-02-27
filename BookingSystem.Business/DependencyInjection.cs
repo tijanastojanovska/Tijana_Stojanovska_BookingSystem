@@ -13,6 +13,7 @@ namespace BookingSystem.Business
 		public static IServiceCollection AddServices(this IServiceCollection services)
 		{
 			services.AddScoped<ISearchService, SearchService>();
+			services.AddScoped<IBookingService, BookingService>();
 			services.AddScoped<ISearchStrategy, HotelOnlySearchStrategy>();
 			services.AddScoped<ISearchStrategy, HotelAndFlightSearchStrategy>();
 			services.AddScoped<ISearchStrategy, LastMinuteHotelsSearchStrategy>();

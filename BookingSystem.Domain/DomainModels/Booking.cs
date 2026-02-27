@@ -8,6 +8,6 @@ namespace BookingSystem.Domain.DomainModels
 		public string OptionCode { get; set; }
 		public DateTime BookingTime { get; set; }
 		public int SleepTime { get; set; }
-		public SearchTypeEnum SearchType { get; init; }
+		public SearchTypeEnum SearchType { get; set; }
 	}
 }

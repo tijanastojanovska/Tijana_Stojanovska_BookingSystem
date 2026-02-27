@@ -6,6 +6,6 @@ namespace BookingSystem.Business.Interfaces.Strategies
 	public interface ISearchStrategy
 	{
 		SearchTypeEnum Type { get; }
-		Task<List<Option>> ExecuteAsync(SearchCriteria criteria);
+		Task<List<Option>> SearchAsync(SearchCriteria criteria);
 	}
 }
