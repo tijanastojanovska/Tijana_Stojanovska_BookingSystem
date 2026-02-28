@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BookingSystem.Business.Helpers
+﻿namespace BookingSystem.Business.Helpers
 {
 
+	/// <summary>
+	/// Provides a helper for generating random alphanumeric booking codes
+	/// </summary>
 	public static class BookingCodeGenerator
 	{
 		private static readonly char[] _allowedCharacters = BuildAllowedCharacters();
 
+		/// <summary>
+		/// Generates a random booking code of the specified length
+		/// </summary>
 		public static string Generate(int length = 6)
 		{
 			if (length <= 0)
@@ -27,6 +29,9 @@ namespace BookingSystem.Business.Helpers
 			return new string(code);
 		}
 
+		/// <summary>
+		/// Builds the array of allowed characters for code generation
+		/// </summary>
 		private static char[] BuildAllowedCharacters()
 		{
 			List<char> characters = new List<char>();

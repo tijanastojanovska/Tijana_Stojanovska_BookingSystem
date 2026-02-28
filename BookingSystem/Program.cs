@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+//Configures Swagger/OpenAPI documentation with JWT Bearer authentication support
 builder.Services.AddSwaggerGen(options =>
 {
 	options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
@@ -25,12 +26,14 @@ builder.Services.AddSwaggerGen(options =>
 		[new OpenApiSecuritySchemeReference("bearer", document)] = []
 	});
 });
+
 //Inject business services
 builder.Services.AddServices();
 
 //Inject data access services
 builder.Services.AddDataAccess();
 
+//Configures JWT-based authentication for the application
 builder.Services.AddAuthentication(x =>
 {
 	x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
