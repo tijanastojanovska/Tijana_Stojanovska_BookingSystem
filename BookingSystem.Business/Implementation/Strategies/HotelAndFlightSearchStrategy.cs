@@ -31,6 +31,7 @@ namespace BookingSystem.Business.Implementation.Strategies
 
 			for (int i = 0; i < count; i++)
 			{
+				//price is calculated as a random number, because the response in both apis did not have a price
 				double price = Random.Shared.Next(50, 301);
 
 

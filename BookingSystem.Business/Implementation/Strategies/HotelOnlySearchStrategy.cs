@@ -28,6 +28,7 @@ namespace BookingSystem.Business.Implementation.Strategies
 
 			foreach (HotelApiResponse h in hotels)
 			{
+				//price is calculated as a random number, because the response in both apis did not have a price
 				double price = Random.Shared.Next(50, 301); 
 
 				Option option = new Option
